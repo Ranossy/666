@@ -546,7 +546,7 @@ end
 ~~~
 
 ---
-###GetAllPlayer
+### GetAllPlayer
 获取所有玩家对象。<br>
 没有参数。<br>
 1个返回值：表。<br>
