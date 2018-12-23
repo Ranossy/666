@@ -70,7 +70,7 @@ function Main(player)
     --输出自己的名字，等级
     print(player.szName, player.nLevel)
 
-    --输出自己叠位置
+    --输出自己的位置
     print(player.nX, player.nY, player.nZ)
 end
 ```
