@@ -171,6 +171,8 @@ local life, lifev, mana, manav, rage, energy, qidian, sun, moon, sun_power, moon
 print(life, lifev, mana, manav, rage, energy, qidian, sun, moon, sun_power, moon_power, fight, horse, state, school, mount, pose, mid)
 
 --和游戏中变量名字一样的含义相同
+--lifev 当前生命值
+--manav 当前内力值
 --fight 是否战斗状态
 --horse 是否在马上
 --state 移动状态（看后面说明）
@@ -219,7 +221,7 @@ end
 ---
 ### GetMount
 功能：获取指定玩家对象的内功。<br>
-1个参数：玩家对象或ID。
+1个参数：玩家对象或ID。<br>
 1个返回值：内功名。<br>
 ~~~Lua
 --如果指定的玩家对象是指定内功之一
@@ -310,7 +312,7 @@ local oota, ootatime = GetPrepare(obj)
 
 ---
 ### GetSkillCN
-功能：获取自己充能技能可用次数。
+功能：获取自己充能技能可用次数。<br>
 1个参数：技能名或ID。<br>
 1个返回值：可用次数。<br>
 
@@ -342,8 +344,8 @@ end
 
 ---
 ### GetTalentInfo
-获取自己的奇穴信息。
-没有参数：
+获取自己的奇穴信息。<br>
+没有参数。<br>
 1个返回值：表。
 ~~~Lua
 local talent = GetTalentInfo()
@@ -369,7 +371,7 @@ local tbuff = GetBuff(target)
 
 ---
 ### GetBuffTime
-功能：获取指定buff的剩余时间。
+功能：获取指定buff的剩余时间。<br>
 3个参数：buff数据表，buff名，是否我造成的（可选）。<br>
 1个返回值：剩余时间（秒），多个buff的话返回最长时间，没有返回 0。<br>
 ~~~Lua
@@ -435,7 +437,7 @@ Use("金疮药")
 参数1：玩家对象或者ID（以这个对象为中心）<br>
 参数2：NPC名字（支持多个，没有名字用模板ID，名字和模板ID在调试信息里看）<br>
 参数3：范围（尺） <br>
-参数4：关系（"自己", "友好", "敌对", "同盟", "队友"）
+参数4：关系（"自己", "友好", "敌对", "同盟", "队友"）<br>
 2个返回值：最近的1个npc对象（没有返回nil），符合条件NPC的数量<br>
 气场、影子、各种圈都可以用这个函数。<br>
 
@@ -488,15 +490,16 @@ end
 ---
 ### GetBomb
 功能：获取指定对象周围6尺自己暗藏杀机机关的数量<br>
-1个参数：角色对象或者ID（以他为中心）
-1个返回值：数量。
+1个参数：角色对象或者ID（以他为中心）<br>
+1个返回值：数量。<br>
 
 ---
 ### GetShadow
 功能：获取自己影子和飞星遁影机关信息。<br>
 没有参数。<br>
 2个返回值：数量，影子数据表（键是序号，值是表）。<br>
-| a | b
+
+| 键 | 说明
 |--- | ---
 | nDist | 和自己的距离
 | nLeftTime | 剩余时间（秒）
