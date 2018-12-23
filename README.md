@@ -128,6 +128,7 @@ end
 
 ## 基础函数
 
+---
 ### print
 功能：打印信息，这是最基本的调试手段，脚本出错了，多用这个函数输出变量看看<br>
 参数：任意。<br>
@@ -137,16 +138,19 @@ end
 print("Hello", 123)
 ~~~
 
+---
 ### output
 功能：打印表，和上面的区别是不用自己遍历表，可以输出整个表的信息<br>
 参数：任意<br>
 没有返回值。
 
+---
 ### GetTickCount
 功能：获取当前的一个毫秒数。
 没有参数。
 1个返回值
 
+---
 ### GetLogicFrameCount
 功能：获取当前游戏的帧计数值。<br>
 没有参数。<br>
@@ -155,6 +159,7 @@ print("Hello", 123)
 
 ## 角色信息
 
+---
 ### GetAttr
 功能：获取角色的常用信息。<br>
 1个参数：角色对象。<br>
@@ -175,6 +180,7 @@ print(life, lifev, mana, manav, rage, energy, qidian, sun, moon, sun_power, moon
 --mid 参数中指定对象的ID，这里是自己的对象ID。
 ~~~
 
+---
 ### GetState
 功能：获取指定角色对象的移动状态。<br>
 1个参数：角色对象或ID。<br>
@@ -193,6 +199,7 @@ if string.find("眩晕|定身|锁足", tstate) then
 end
 ~~~
 
+---
 ### GetSchool
 功能：获取指定玩家对象的门派。<br>
 1个参数：玩家对象或ID。<br>
@@ -209,6 +216,7 @@ if string.find("七秀|五毒|长歌", tschool) then
 end
 ~~~
 
+---
 ### GetMount
 功能：获取指定玩家对象的内功。<br>
 1个参数：玩家对象或ID。
@@ -221,6 +229,7 @@ if string.find("云裳心经|补天诀|相知|离经易道"， tmount) then
 end
 ~~~
 
+---
 ### GetPose
 功能：获取指定玩家对象姿态。<br>
 1个参数：玩家对象或ID。<br>
@@ -237,6 +246,7 @@ end
 
 ## 技能相关函数
 
+---
 ### Cast
 功能：使用技能。<br>
 3个参数：<br>
@@ -254,28 +264,33 @@ Cast("冰蚕牵丝", true)
 Cast("冰蚕牵丝", true, true)
 ~~~
 
+---
 ### CastXYZ
 功能：在指定位置释放技能。<br>
 4个参数：技能名或ID，x坐标，y坐标，z坐标，是否忽略读条。<br>
 1个返回值：是否释放成功
 
+---
 ### CastTo
 功能：面向指定角色对象释放技能。<br>
 3个参数：技能名或ID，目标角色对象或ID，是否忽略读条<br>
 1个返回值：是否释放成功<br>
 说明：当前目标不变。
 
+---
 ### CastBack
 功能：背对指定角色对象释放技能。<br>
 3个参数：技能名或ID，目标角色对象或ID，是否忽略读条<br>
 1个返回值：是否释放成功<br>
 说明：当前目标不变。
 
+---
 ### StopAction
 功能：打断自己读条。<br>
 没有参数。<br>
 没有返回值。<br>
 
+---
 ### GetPrepare
 功能：获取指定角色对象的读条数据。<br>
 1个参数：角色对象或ID。（不指定获取自己读条数据）<br>
@@ -287,21 +302,25 @@ local mota, motatime = GetPrepare()
 local oota, ootatime = GetPrepare(obj)
 ~~~
 
+---
 ### GetSkillCD
 功能：获取自己技能CD剩余时间。<br>
 1个参数：技能名或ID。<br>
 1个返回值：CD剩余时间，不在CD返回 0。<br>
 
+---
 ### GetSkillCN
 功能：获取自己充能技能可用次数。
 1个参数：技能名或ID。<br>
 1个返回值：可用次数。<br>
 
+---
 ### GetSkillOD
 功能：获取自己透支技能可用次数。<br>
 1个参数：技能名或ID。<br>
 1个返回值：可用次数。<br>
 
+---
 ### GetCastTime
 功能：获取指定对象释放指定技能时间。<br>
 2个参数：角色对象或者ID， 技能ID(只能是ID)。<br>
@@ -315,11 +334,13 @@ if time123 >= 0 and time123 < 5 then
 end
 ~~~
 
+---
 ### GetCastCount
 功能：获取指定对象指定时间内释放指定技能的次数。<br>
 3个参数：角色对象或ID， 技能ID，时间（单位：秒）<br>
 1个返回值：释放次数，没放过返回0。<br>
 
+---
 ### GetTalentInfo
 获取自己的奇穴信息。
 没有参数：
@@ -334,6 +355,7 @@ end
 
 ## Buff
 
+---
 ### GetBuff
 功能：获取指定角色对象buff数据。<br>
 1个参数：角色对象或ID。只能获取和自己有关系的角色的buff数据（自己，目标，目标的目标，队友）<br>
@@ -345,6 +367,7 @@ local mbuff = GetBuff(player)
 local tbuff = GetBuff(target)
 ~~~
 
+---
 ### GetBuffTime
 功能：获取指定buff的剩余时间。
 3个参数：buff数据表，buff名，是否我造成的（可选）。<br>
@@ -357,11 +380,13 @@ local mktime = GetBuffTime(tbuff, "免控名字1|免控名字2|免控名字3")
 local bufftime = GetBuffTime(tbuff, "buff名", true)
 ~~~
 
+---
 ### GetBuffStack
 功能：获取buff堆叠层数<br>
 3个参数：和上面函数一样。（buff名不支持列表，只能是单个）。<br>
 1个返回值：层数，没有返回 0。<br>
 
+---
 ### CancelBuff
 功能：取消自己的指定buff。<br>
 两个参数：自己的buff数据表，buff名字或ID。<br>
@@ -371,6 +396,7 @@ local bufftime = GetBuffTime(tbuff, "buff名", true)
 CancelBuff(mbuff, "骑御")
 ~~~
 
+---
 ### 判断角色对象有没有指定buff
 这是角色对象的一个方法，有时候只想判断对象有没有特定的某个buff，可以调用这个函数，不用再先GetBuff，然后再判断时间。只能用buffid。<br>
 2个参数：buffid，等级（如果不关心等级，传0）。<br>
@@ -385,6 +411,7 @@ end
 
 ## 物品
 
+---
 ### Use
 功能：使用物品。<br>
 1个参数：物品名称。<br>
@@ -393,6 +420,7 @@ end
 Use("金疮药")
 ~~~
 
+---
 ### UseEquip
 功能：穿上背包中的装备。<br>
 1个参数：装备名。<br>
@@ -400,6 +428,7 @@ Use("金疮药")
 
 ## 门派相关
 
+---
 ### FindNpc
 功能：获取符合条件的NPC对象和数量。<br>
 4个参数：<br>
@@ -410,6 +439,7 @@ Use("金疮药")
 2个返回值：最近的1个npc对象（没有返回nil），符合条件NPC的数量<br>
 气场、影子、各种圈都可以用这个函数。<br>
 
+---
 ### 获取指定五毒玩家的宠物NPC对象
 这是一个玩家对象的方法。没有参数，1个返回值是五毒的宠物NPC对象，如果没有返回nil。
 ~~~Lua
@@ -429,6 +459,7 @@ elseif ... then
 end
 ~~~
 
+---
 ### GetPuppet
 功能：获取自己千机变数据。<br>
 没有参数。<br>
@@ -454,11 +485,13 @@ if puppettime < 5 then
 end
 ~~~
 
+---
 ### GetBomb
 功能：获取指定对象周围6尺自己暗藏杀机机关的数量<br>
 1个参数：角色对象或者ID（以他为中心）
 1个返回值：数量。
 
+---
 ### GetShadow
 功能：获取自己影子和飞星遁影机关信息。<br>
 没有参数。<br>
@@ -473,11 +506,13 @@ end
 
 <b>注释：这个接口觉得不是很方便，你们有什么需求再添加。</b>
 
+---
 ### GetBody
 功能：获取指定长歌玩家的本体NPC对象。<br>
 1个参数：玩家对象或ID。<br>
 1个返回值：本体NPC对象，没有返回nil。<br>
 
+---
 ### GetControlPlayer
 获取被自己控制（平沙）的玩家对象。<br>
 没有参数。<br>
@@ -485,6 +520,7 @@ end
 
 ## 周围玩家
 
+---
 ### GetSeeMe
 获取指定范围内目标是我的敌对玩家信息。<br>
 1个参数：范围（单位：尺）。<br>
@@ -508,23 +544,28 @@ end
 
 ## 队伍和关系
 
+---
 ### IsAlly
 是否同盟。1个参数：角色对象或ID。1个返回值：是(true)否(false)
 
+---
 ### IsEnemy
 是否敌对。同上。
 
+---
 ### IsNeutrality
 是否中立。同上
 
 ### IsParty
 是否队友。同上。
 
+---
 ### GetRela
 获取任意两个角色对象的关系。<br>
 2个参数：第一个角色对象或ID，第二个角色对象或ID。<br>
 1个返回值：关系。("自己", "友好", "敌对", "同盟", "队友")<br>
 
+---
 ### 是否有队伍
 玩家对象的方法。没有参数。
 ~~~Lua
@@ -533,6 +574,7 @@ if player.IsInParty() then
 end
 ~~~
 
+---
 ### GetTeamInfo
 获取自己的队伍信息。
 没有参数。
@@ -545,6 +587,7 @@ if teamInfo["惊羽诀"] then
 end
 ~~~
 
+---
 ### FindTeamMember
 遍历自己队伍中的玩家。<br>
 1个参数：函数。<br>
@@ -622,47 +665,57 @@ print(pMinHp, nMinHp, mCount, mCountHp, mCountAVG)
 
 ## 距离位置
 
+---
 ### GetDist
 获取两个对象的距离。<br>
 2个参数：对象1，对象2.<br>
 1个返回值：距离（尺）。<br>
 
+---
 ### GetDist2D
 获取两个对象的二维距离（不计算Z轴）。<br>
 参数同上。<br>
 返回值同上。<br>
 
+---
 ### IsVisible
 判断两个对象是否视线可达。<br>
 2个参数：对象1，对象2.<br>
 1个返回值：true 或 false<br>
 
+---
 ### GetMyHeight
 获取自己离地面的高度。<br>
 没有参数。<br>
 1个返回值：高度（尺）。<br>
 
+---
 ### GetTarHeight
 获取目标离地面的高度。<br>
 没有参数。<br>
 1个返回值：高度（尺）。<br>
 
+---
 ### GetDiffZ
 获取自己和指定对象的高度差。<br>
 1个参数：角色对象。<br>
 1个返回值：高度差。<br>
 
+---
 ### IsFront
 自己是否在指定对象的前方（他是否面向自己）<br>
 
+---
 ### IsBack
 自己是否在指定对象背后（他是否背对自己）<br>
 
+---
 ### TurnTo
 面向指定对象。<br>
 1个参数：角色对象或ID。<br>
 没有返回值。<br>
 
+---
 ### BackTo
 背对指定对象。<br>
 1个参数：角色对象或ID。<br>
@@ -670,6 +723,7 @@ print(pMinHp, nMinHp, mCount, mCountHp, mCountAVG)
 
 ## 目标
 
+---
 ### GetTarget
 获取指定对象的目标。<br>
 1个参数：角色对象或ID。<br>
@@ -689,6 +743,7 @@ end
 local tttarget, tttclass = GetTarget(ttarget)   --获取目标的目标的目标对象和类型
 ~~~
 
+---
 ### SetTarget
 设置自己的当前目标。<br>
 1个参数：角色对象或ID。<br>
@@ -698,83 +753,107 @@ local tttarget, tttclass = GetTarget(ttarget)   --获取目标的目标的目标
 SetTarget(obj)  --设置自己的当前目标为指定对象
 ~~~
 
+---
 ### SetPrevTarget
 选择上一个目标，选了A，然后选B，调用这个函数就会选回A。<br>
 
+---
 ### GetMyID
 没有参数，1个返回值：自己的对象ID。<br>
 
+---
 ### GetMyPlayer
 没有参数，1个返回值：自己的玩家对象。<br>
 
+---
 ### GetTargetID
 没有参数，1个返回值：自己当前目标的对象ID。<br>
 
 ## 移动控制
 下面这些函数都没有参数和返回值。
 
+---
 ### MoveToTarget
 向当前目标移动。
 
+---
 ### FollowTarget
 跟随当前目标。
 
+---
 ### MoveForwardStart
 开始向前移动。
 
+---
 ### MoveForwardStop
 停止向前移动。
 
+---
 ### MoveBackwardStart
 开始向后移动。
 
+---
 ### MoveBackwardStop
 停止向后移动。
 
+---
 ### StrafeLeftStart
 开始向左移动。
 
+---
 ### StrafeLeftStop
 停止向左移动。
 
+---
 ### StrafeRightStart
 开始向右移动。
 
+---
 ### StrafeRightStop
 停止向右移动。
 
+---
 ### Jump
 跳
 
+---
 ### MoveAction_StopAll
 停止所有移动。
 
 ## 地图和场景
 下面这些函数都没有参数，1个返回值。
 
+---
 ### GetMapID
 获取地图ID。
 
+---
 ### GetMapName
 获取地图名。
 
+---
 ### IsInArena
 是否在JJC。
 
+---
 ### IsInDungeon
 是否在副本。
 
+---
 ### IsInBattle
 是否在战场。
 
+---
 ### IsInTreasure
 是否在吃鸡。
 
+---
 ### IsInZombie
 是否在李渡。
 
 ## 杂项
 
+---
 ### AddOption
 在脚本选项菜单中添加一个选项。<br>
 1个参数：选项名。<br>
@@ -785,6 +864,7 @@ SetTarget(obj)  --设置自己的当前目标为指定对象
 AddOption("选项一")
 ~~~
 
+---
 ### GetOption
 获取选项的选中状态。<br>
 1个参数：选项名。<br>
@@ -796,6 +876,7 @@ if GetOption("选项一") then
 end
 ~~~
 
+---
 ### Delay
 延时。
 1个参数：时间（毫秒）。
@@ -807,6 +888,7 @@ Delay(500)      --等待半秒钟
 
 ## 回调函数
 
+---
 ### OnPrepare
 任意角色对象开始读条，会调用脚本中这个函数。
 ~~~Lua
@@ -830,6 +912,7 @@ function OnPrepare(CasterID, dwSkillID, dwLevel, nLeftFrame, tClass, tIDnX, nY, 
 end
 ~~~
 
+---
 ### OnCast
 任意角色对象释放技能，会调用脚本中这个函数。
 ~~~Lua
