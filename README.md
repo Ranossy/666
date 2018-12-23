@@ -545,6 +545,26 @@ if seemet["焚影圣诀"] and seemet["焚影圣诀"] >= 2 then
 end
 ~~~
 
+---
+###GetAllPlayer
+获取所有玩家对象。<br>
+没有参数。<br>
+1个返回值：表。<br>
+~~~Lua
+--遍历周围所有玩家
+local players = GetAllPlayer()
+for k,v in ipairs(players) do	--v是玩家对象
+	print(v.szName)	--输出他的名字
+	print(GetHeight(v))	--高度
+	if v.dwId ~= player.dwID then	--如果不是我
+	
+	end
+	if IsEnemy(v) then	--如果是敌人
+	
+	end
+end
+~~~
+
 ## 队伍和关系
 
 ---
