@@ -689,15 +689,21 @@ print(pMinHp, nMinHp, mCount, mCountHp, mCountAVG)
 1个返回值：true 或 false<br>
 
 ---
-### GetMyHeight
+### GetMyHeight(废弃，用GetHeight)
 获取自己离地面的高度。<br>
 没有参数。<br>
 1个返回值：高度（尺）。<br>
 
 ---
-### GetTarHeight
+### GetTarHeight(废弃，用GetHeight)
 获取目标离地面的高度。<br>
 没有参数。<br>
+1个返回值：高度（尺）。<br>
+
+---
+### GetHeight
+获取任意玩家对象距离地面的高度。<br>
+1个参数：玩家对象或ID。<br>
 1个返回值：高度（尺）。<br>
 
 ---
