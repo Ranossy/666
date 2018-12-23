@@ -549,7 +549,9 @@ end
 
 ---
 ### IsAlly
-是否同盟。1个参数：角色对象或ID。1个返回值：是(true)否(false)
+是否同盟。<br>
+1个参数：角色对象或ID。<br>
+1个返回值：是(true)否(false)<br>
 
 ---
 ### IsEnemy
@@ -579,8 +581,8 @@ end
 
 ---
 ### GetTeamInfo
-获取自己的队伍信息。
-没有参数。
+获取自己的队伍信息。<br>
+没有参数。<br>
 2个返回值：队伍中的人物，表。<br>
 ~~~Lua
 local teamCount, teamInfo = GetTeamInfo()
@@ -706,11 +708,15 @@ print(pMinHp, nMinHp, mCount, mCountHp, mCountAVG)
 
 ---
 ### IsFront
-自己是否在指定对象的前方（他是否面向自己）<br>
+自己是否在指定对象的前方（他是否面向自己）。<br>
+1个参数：角色对象或ID。
+1个返回值：是(true)或否(false)。
 
 ---
 ### IsBack
-自己是否在指定对象背后（他是否背对自己）<br>
+自己是否在指定对象背后（他是否背对自己）。<br>
+1个参数：角色对象或ID。
+1个返回值：是(true)或否(false)。
 
 ---
 ### TurnTo
@@ -759,6 +765,7 @@ SetTarget(obj)  --设置自己的当前目标为指定对象
 ---
 ### SetPrevTarget
 选择上一个目标，选了A，然后选B，调用这个函数就会选回A。<br>
+没有参数，没有返回值。<br>
 
 ---
 ### GetMyID
@@ -881,9 +888,9 @@ end
 
 ---
 ### Delay
-延时。
-1个参数：时间（毫秒）。
-没有返回值。
+延时。<br>
+1个参数：时间（毫秒）。<br>
+没有返回值。<br>
 说明：调用后会结束Main函数执行，超时之后从Main函数的第一行开始执行。<br>
 ~~~Lua
 Delay(500)      --等待半秒钟
