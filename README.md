@@ -993,6 +993,27 @@ function OnCast(CasterID, dwSkillID, dwLevel, nPastFrame, tClass, tIDnX, nY, nZ)
 end
 ~~~
 
+---
+### 自定义快捷键回调
+按下快捷键设置中设置的自定义快捷键1-5，回调用脚本中对应的函数。<br>
+~~~Lua
+function OnHotKey1()
+	print("自定义快捷键1按下")
+end
+function OnHotKey2()
+	print("自定义快捷键2按下")
+end
+function OnHotKey3()
+	print("自定义快捷键3按下")
+end
+function OnHotKey4()
+	print("自定义快捷键4按下")
+end
+function OnHotKey5()
+	print("自定义快捷键5按下")
+end
+~~~
+
 ## 脚本完整结构
 ~~~Lua
 --初始化部分，载入的时候会执行，不要放在函数里面
